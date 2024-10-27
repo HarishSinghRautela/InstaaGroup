@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Chat Links</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Group Chat Links</h1>
+        <form id="linkForm">
+            <input type="url" id="linkInput" placeholder="Paste your Instagram group link here" required>
+            <button type="submit">Add Link</button>
+        </form>
+        <ul id="linkList"></ul>
+    </div>
+    
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getDatabase, ref, push, onValue, remove, query, limitToLast } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCgADeA01ZT4n1NkhtLvVGX8Jhm7k326HU",
+            authDomain: "instaameet.firebaseapp.com",
+            projectId: "instaameet",
+            storageBucket: "instaameet.appspot.com",
+            messagingSenderId: "1056219493925",
+            appId: "1:1056219493925:web:0b7109dad47836c05ff1cc",
+            measurementId: "G-81907GZ18M",
+            databaseURL: "https://instaameet-default-rtdb.firebaseio.com/"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+    </script>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
